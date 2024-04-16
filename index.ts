@@ -18,7 +18,6 @@ if (answer.pin === Pincode) {
     {
     console.log("Correct Pincode!!!");
 }
-// else (console.log("Incorrect Pincode"));
 
 let operationans = await inquirer.prompt(
     [
@@ -43,9 +42,13 @@ if (operationans.operation === "withdraw") {
         ]
     )
 
-    myBalance -= amountans.amount;
-
-    console.log("Your remaining balance is:" + myBalance);
+    if (amountans.amount < myBalance){
+        myBalance -= amountans.amount;
+        console.log ("Now your balance is" +myBalance)
+    }
+    else{
+        console.log("Insufficient balance")
+    }
    }
 
 
@@ -69,11 +72,6 @@ else if (operationans.operation === "fast cash") {
 
     console.log("your remaining balance is :" + myBalance);
     }
-
-//     else if(operationans.operation > myBalance)
-//  {
-//     console.log("Insufficient balance")
-// }
 }
  
 else { console.log("Incorrect Pincode"); }

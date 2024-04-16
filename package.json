@@ -1,6 +1,6 @@
 {
   "name": "ayeshaparwaiz381_atm-machine",
-  "version": "1.0.1",
+  "version": "2.0.1",
   "description": "This is a Simple ATM Machine.",
   "main": "index.js",
   "type": "module",

@@ -31,8 +31,13 @@ if (answer.pin === Pincode) {
                 message: "enter your amount",
             }
         ]);
-        myBalance -= amountans.amount;
-        console.log("Your remaining balance is:" + myBalance);
+        if (amountans.amount < myBalance) {
+            myBalance -= amountans.amount;
+            console.log("Now your balance is" + myBalance);
+        }
+        else {
+            console.log("Insufficient balance");
+        }
     }
     else if (operationans.operation === "check balance") {
         console.log("your balance is:" + myBalance);
@@ -49,10 +54,6 @@ if (answer.pin === Pincode) {
         myBalance -= cash.fastcash;
         console.log("your remaining balance is :" + myBalance);
     }
-    //     else if(operationans.operation > myBalance)
-    //  {
-    //     console.log("Insufficient balance")
-    // }
 }
 else {
     console.log("Incorrect Pincode");
